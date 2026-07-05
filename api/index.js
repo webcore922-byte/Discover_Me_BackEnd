@@ -44,22 +44,22 @@ app.use(async (req, res, next) => {
 });
 
 // ================= تسجيل الراوتس =================
-app.use('/api/users', userRoutes);
-app.use('/api/players', playerRoutes);
-app.use('/api/admins', adminRoutes);
-app.use('/api/coaches', coachRoutes);
-app.use('/api/consultants', consultantRoutes);
-app.use('/api/field-testers', fieldTesterRoutes);
-app.use('/api/camps', campRoutes);
-app.use('/api/camp-registrations', campRegistrationRoutes);
-app.use('/api/contests', contestRoutes);
-app.use('/api/contest-submissions', contestSubmissionRoutes);
-app.use('/api/annual-league-submissions', annualLeagueRoutes);
-app.use('/api/news', newsRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/shipping-rates', shippingRateRoutes);
-app.use('/api/contact', contactRoutes);
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/players', playerRoutes);
+app.use('/api/v1/admins', adminRoutes);
+app.use('/api/v1/coaches', coachRoutes);
+app.use('/api/v1/consultants', consultantRoutes);
+app.use('/api/v1/field-testers', fieldTesterRoutes);
+app.use('/api/v1/camps', campRoutes);
+app.use('/api/v1/camp-registrations', campRegistrationRoutes);
+app.use('/api/v1/contests', contestRoutes);
+app.use('/api/v1/contest-submissions', contestSubmissionRoutes);
+app.use('/api/v1/annual-league-submissions', annualLeagueRoutes);
+app.use('/api/v1/news', newsRoutes);
+app.use('/api/v1/products', productRoutes);
+app.use('/api/v1/orders', orderRoutes);
+app.use('/api/v1/shipping-rates', shippingRateRoutes);
+app.use('/api/v1/contact', contactRoutes);
 
 // ================= Route تجريبي للتأكد إن السيرفر شغال =================
 app.get('/', (req, res) => {
