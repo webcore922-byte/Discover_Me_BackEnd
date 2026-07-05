@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+
+const fieldTesterSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true, trim: true },
+    specialty: { type: String, trim: true },
+    bio: { type: String, trim: true },
+    tags: { type: [String], default: [] },
+    image: { type: String, default: '' },
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model('FieldTester', fieldTesterSchema);
