@@ -1,7 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-
-// أي routes هتضيفها هنا بعدين، مثلاً:
-// router.get('/', (req, res) => res.json({ message: 'test' }));
-
+const {
+  getAllSubmissions,
+  getSubmissionById,
+  createSubmission,
+  updateSubmission,
+  deleteSubmission,
+} = require("../controllers/annualLeagueController");
+const { protect, adminOnly } = require("../middleware/auth");
+router.get("/", getAllSubmissions);
+router.get("/:id", getSubmissionById);
+router.post("/", createSubmission);
+router.put("/:id", protect, adminOnly(), updateSubmission);
+router.patch("/:id", protect, adminOnly(), updateSubmission);
+router.delete("/:id", protect, adminOnly(), deleteSubmission);
 module.exports = router;
