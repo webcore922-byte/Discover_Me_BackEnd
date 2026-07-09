@@ -8,7 +8,7 @@ const {
   patchProduct,
   deleteProduct,
   recomputeBestSellersHandler
-} = require('../controllers/productController/productController');
+} = require('../controllers/productController');
 const {
   protect,
   adminOnly

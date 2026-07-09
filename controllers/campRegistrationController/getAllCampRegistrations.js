@@ -1,4 +1,4 @@
-const CampRegistration = require("../../model/CampRegistration");
+const CampRegistration = require('../../model/CampRegistration');
 const getAllCampRegistrations = async (req, res, next) => {
   try {
     const filter = {};
@@ -6,7 +6,7 @@ const getAllCampRegistrations = async (req, res, next) => {
       filter.playerEmail = req.query.playerEmail.toLowerCase().trim();
     }
     const registrations = await CampRegistration.find(filter).sort({
-      createdAt: -1,
+      createdAt: -1
     });
     res.status(200).json(registrations);
   } catch (error) {

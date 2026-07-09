@@ -6,7 +6,7 @@ const {
   createOrder,
   updateOrder,
   deleteOrder
-} = require('../controllers/orderController/orderController');
+} = require('../controllers/orderController');
 const {
   protect,
   adminOnly

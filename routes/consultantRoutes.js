@@ -1,7 +1,19 @@
 const express = require('express');
 const router = express.Router();
-
-// أي routes هتضيفها هنا بعدين، مثلاً:
-// router.get('/', (req, res) => res.json({ message: 'test' }));
-
+const {
+  getAllConsultants,
+  getConsultantById,
+  createConsultant,
+  updateConsultant,
+  deleteConsultant
+} = require('../controllers/consultantController');
+const {
+  protect,
+  adminOnly
+} = require('../middleware/auth');
+router.get('/', getAllConsultants);
+router.get('/:id', getConsultantById);
+router.post('/', protect, adminOnly(), createConsultant);
+router.put('/:id', protect, adminOnly(), updateConsultant);
+router.delete('/:id', protect, adminOnly(), deleteConsultant);
 module.exports = router;
